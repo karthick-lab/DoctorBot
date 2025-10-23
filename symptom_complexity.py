@@ -4,7 +4,6 @@ model_name = "mistral-7b-instruct-v0.2.Q5_K_S.gguf"
 model_path = r"C:\Users\admin\Desktop\Models"
 
 # Load model once at module level
-#test
 model = GPT4All(model_name=model_name, model_path=model_path, allow_download=False)
 
 def check_symptom_complexity(symptoms: str) -> str:
