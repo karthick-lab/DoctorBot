@@ -1,0 +1,4 @@
+dist/*.exe
+build/*.pkg
+models/*.gguf
+ffmpeg-*/**/*.exe
