@@ -21,7 +21,7 @@ def generate_medical_advice(user_question: str, mode="general"):
     advice_prompt = (
         f"Answer this medical doubt clearly and concisely: {user_question}\n"
         f"Use Tamil Nadu–specific context if relevant. Avoid disclaimers unless necessary.\n"
-        f"Limit to 50 words. Use simple language. No introductions."
+        f"Limit to 200 words. Use simple language. No introductions."
     )
 
     advice = ask(advice_prompt)
