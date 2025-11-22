@@ -1,14 +1,23 @@
+import json
 import os
 import re
+import sys
 from datetime import datetime
 from fpdf import FPDF
+
+
+exe_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
+config_file = os.path.join(exe_dir, "config.json")
+
+with open(config_file, "r") as f:
+    CONFIG = json.load(f)
 
 def remove_emojis(text):
     return re.sub(r'[^\x00-\x7F]+', '', text)
 
 def export_to_pdf(disease, symptoms, remedy_text):
     # Folder path
-    folder_path = r"C:\Users\admin\Desktop\Reports\Medical natural remedies report"
+    folder_path = CONFIG["report_path"]
     os.makedirs(folder_path, exist_ok=True)
 
     # Timestamp for versioning

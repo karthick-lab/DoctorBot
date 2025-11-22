@@ -1,8 +1,19 @@
+import json
+import os
+import sys
 import time
 from gpt4all import GPT4All
 
-model_name = "mistral-7b-instruct-v0.2.Q5_K_S.gguf"
-model_path = r"C:\Users\admin\Desktop\Models"
+
+exe_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
+config_file = os.path.join(exe_dir, "config.json")
+
+with open(config_file, "r") as f:
+    CONFIG = json.load(f)
+
+
+model_name = CONFIG["mistral_model_name"]
+model_path = CONFIG["mistral_model_path"]
 
 # Load model once at module level
 model = GPT4All(model_name=model_name, model_path=model_path, allow_download=False)
