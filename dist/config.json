@@ -1,9 +1,0 @@
-{
-
-  "mistral_model_name": "mistral-7b-instruct-v0.2.Q5_K_S.gguf",
-  "mistral_model_path": "C:\\Users\\admin\\Desktop\\Models",
-  "gemini_model": "https://gemini.google.com/app",
-  "report_path":"C:\\Users\\admin\\Desktop\\Reports\\Medical natural remedies report"
-
-
-}
