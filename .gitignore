@@ -1,4 +1,4 @@
 dist/*.exe
-build/*.pkg
+build/
 models/*.gguf
 ffmpeg-*/**/*.exe
