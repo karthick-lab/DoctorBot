@@ -17,6 +17,19 @@ advice_generating = False
 diagnosis_thread = None
 advice_thread = None
 
+import os, sys, json
+
+# If a config path is passed as an argument, use it
+if len(sys.argv) > 1:
+    config_file = sys.argv[1]
+else:
+    # fallback: look in the script/exe folder
+    exe_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
+    config_file = os.path.join(exe_dir, "config.json")
+
+with open(config_file, "r") as f:
+    CONFIG = json.load(f)
+
 def update_status_loop(start_time, mode):
     if mode == "diagnosis" and diagnosing and not cancel_requested:
         elapsed = int(time.time() - start_time)
